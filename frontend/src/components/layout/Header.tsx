@@ -119,7 +119,7 @@ export function Header() {
   const geminiBadge = health.status !== 'online'
     ? { label: 'Gemini Status Unknown', tone: 'bg-muted/60 border-border text-muted-foreground' }
     : health.geminiConfigured
-      ? { label: 'Gemini Ready', tone: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-700' }
+      ? { label: 'I am Ready', tone: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-700' }
       : { label: 'Gemini Not Configured', tone: 'bg-amber-500/10 border-amber-500/20 text-amber-700' };
 
   return (
