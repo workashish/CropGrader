@@ -1,0 +1,4 @@
+{"id":"a32daf7d-78fa-4f69-8eb2-c4cda7d4b07c","timestamp":"2026-02-08T05:11:48.847Z","produceType":"apple","predictedGrade":"B","predictedScore":82,"groundTruthGrade":"A","groundTruthScore":null,"confidence":95,"notes":null}
+{"id":"9a8e8838-0ec1-4de2-bad7-02ae06b052a2","timestamp":"2026-02-12T04:55:14.708Z","produceType":"apple","predictedGrade":"B","predictedScore":80,"groundTruthGrade":"C","groundTruthScore":null,"confidence":95,"notes":null}
+{"id":"d6c5fc1d-355e-4c1b-af55-00b0994e66f9","timestamp":"2026-02-16T05:53:54.839Z","produceType":"orange","predictedGrade":"B","predictedScore":78,"groundTruthGrade":"A","groundTruthScore":null,"confidence":92,"notes":null}
+{"id":"7052131d-0c36-4a98-92ec-b703cb93d8b1","timestamp":"2026-02-16T07:28:37.810Z","produceType":"mango","predictedGrade":"B","predictedScore":82,"groundTruthGrade":"B","groundTruthScore":null,"confidence":95,"notes":null}

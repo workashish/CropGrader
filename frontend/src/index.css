@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base - Modern, sophisticated light theme */
+    --background: 210 40% 98%;
+    /* Soft cool white */
+    --foreground: 160 84% 10%;
+    /* Deepest green-black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 84% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 84% 10%;
+
+    /* Brand Colors - Fortune 500 Agriculture (Deep Emerald & Gold) */
+    --primary: 160 84% 20%;
+    /* Deep Emerald */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 20% 96%;
+    /* Pale Sage */
+    --secondary-foreground: 160 84% 20%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 38 92% 50%;
+    /* Harvest Gold */
+    --accent-foreground: 160 84% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 20%;
+
+    --radius: 0.75rem;
+    /* Slightly more rounded for modern feel */
+
+    /* Chart / Grade Colors */
+    --chart-1: 160 84% 20%;
+    /* Emerald */
+    --chart-2: 38 92% 50%;
+    /* Gold */
+    --chart-3: 200 80% 50%;
+    /* Sky Blue (Water/Irrigation) */
+    --chart-4: 0 84% 60%;
+    /* Red (Defect) */
+    --chart-5: 262 52% 47%;
+
+    /* Grade Colors */
+    --grade-a: 160 84% 35%;
+    /* Vibrant Green */
+    --grade-b: 80 84% 40%;
+    /* Lime-ish */
+    --grade-c: 38 92% 50%;
+    /* Yellow-Orange */
+    --grade-d: 0 84% 60%;
+    /* Red */
+    --grade-d: 0 84% 60%;
+    /* Red */
+
+    /* Sidebar Variables */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 160 84% 10%;
+    --sidebar-primary: 160 84% 20%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 20% 96%;
+    --sidebar-accent-foreground: 160 84% 20%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 160 84% 20%;
+  }
+
+  .dark {
+    --background: 160 84% 3%;
+    --foreground: 210 40% 98%;
+
+    --card: 160 84% 5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 160 84% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 160 60% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 30% 10%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 160 30% 10%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 160 30% 12%;
+    --input: 160 30% 12%;
+    --ring: 160 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary;
+    background-image: radial-gradient(at 0% 0%, hsla(160, 50%, 96%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(38, 60%, 96%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(200, 50%, 96%, 1) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl dark:bg-black/40 dark:border-white/10;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
