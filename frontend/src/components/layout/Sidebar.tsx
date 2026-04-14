@@ -19,8 +19,9 @@ const navItems = [
   { path: '/grader', label: 'Single Crop Grader', icon: Camera },
   { path: '/batch', label: 'Batch Grading', icon: Images },
   { path: '/price', label: 'Price Estimator', icon: IndianRupee },
-  { path: '/pest', label: 'Pest & Disease', icon: Bug },
-  { path: '/accuracy', label: 'Accuracy Dashboard', icon: BarChart3 },
+  // Temporarily hide Pest & Disease and Accuracy Dashboard
+  // { path: '/pest', label: 'Pest & Disease', icon: Bug },
+  // { path: '/accuracy', label: 'Accuracy Dashboard', icon: BarChart3 },
   { path: '/history', label: 'Grading History', icon: History },
 ];
 
