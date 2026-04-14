@@ -224,31 +224,27 @@ const translateViaMyMemory = async (text, source, target) => {
 const translateText = async (text, source, target) => {
   if (!text || !text.trim()) return text;
   const lines = text.split('\n');
-  const translatedLines = [];
 
-  for (const line of lines) {
-    if (!line.trim()) {
-      translatedLines.push('');
-      continue;
-    }
-    const chunks = splitLineForTranslation(line, TRANSLATE_MAX_CHARS);
-    const translatedChunks = [];
-    for (const chunk of chunks) {
-      const translated = await translateViaMyMemory(chunk, source, target);
-      translatedChunks.push(translated);
-    }
-    translatedLines.push(translatedChunks.join(' '));
-  }
+  const translatedLines = await Promise.all(
+    lines.map(async (line) => {
+      if (!line.trim()) {
+        return '';
+      }
+      const chunks = splitLineForTranslation(line, TRANSLATE_MAX_CHARS);
+      const translatedChunks = await Promise.all(
+        chunks.map((chunk) => translateViaMyMemory(chunk, source, target))
+      );
+      return translatedChunks.join(' ');
+    })
+  );
 
   return translatedLines.join('\n');
 };
 
 const translateBatch = async (texts, source, target) => {
-  const results = [];
-  for (const text of texts) {
-    results.push(await translateText(String(text || ''), source, target));
-  }
-  return results;
+  return Promise.all(
+    texts.map((text) => translateText(String(text || ''), source, target))
+  );
 };
 
 const normalizeAiScores = (scores) => {
