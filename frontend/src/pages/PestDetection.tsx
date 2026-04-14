@@ -64,10 +64,7 @@ export default function PestDetection() {
     setResult(null);
 
     try {
-      const [diagnosis] = await Promise.all([
-        detectPestDisease(images.map((img) => img.file), language),
-        new Promise(resolve => setTimeout(resolve, 1200))
-      ]);
+      const diagnosis = await detectPestDisease(images.map((img) => img.file), language);
       setResult(diagnosis);
       await savePestDiagnosis(diagnosis, user.id, images.length);
       toast({

@@ -38,11 +38,7 @@ export default function SingleGrader() {
     setGroundTruthGrade('');
 
     try {
-      // Add artificial delay for "Scanning" effect if API is too fast
-      const [gradingResult] = await Promise.all([
-        gradeCrop(selectedImage, undefined, language),
-        new Promise(resolve => setTimeout(resolve, 1500))
-      ]);
+      const gradingResult = await gradeCrop(selectedImage, undefined, language);
 
       setResult(gradingResult);
       await saveGradingResult(gradingResult, user.id);

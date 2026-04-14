@@ -32,9 +32,6 @@ export default function PriceEstimator() {
   const handleCalculate = async () => {
     if (!user) return;
 
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 600));
-
     const result = estimatePrice(cropType, grade, quantity, region, {
       organic,
       pesticideFree,
